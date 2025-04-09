@@ -1,0 +1,52 @@
+{
+  "name": "agent-system",
+  "displayName": "AI Agent System",
+  "description": "Team of AI agents for software development",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "agentSystem.connect",
+        "title": "AI Agents: Connect to Server"
+      },
+      {
+        "command": "agentSystem.startWorkflow",
+        "title": "AI Agents: Start New Task"
+      },
+      {
+        "command": "agentSystem.getResults",
+        "title": "AI Agents: Show Latest Results"
+      }
+    ],
+    "configuration": {
+      "title": "AI Agent System",
+      "properties": {
+        "agentSystem.serverUrl": {
+          "type": "string",
+          "default": "ws://localhost:8765",
+          "description": "URL for the Agent System server"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "package": "vsce package"
+  },
+  "dependencies": {
+    "ws": "^8.13.0"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.60.0",
+    "vsce": "^2.15.0"
+  }
+}
